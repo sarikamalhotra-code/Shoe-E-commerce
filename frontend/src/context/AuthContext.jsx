@@ -140,6 +140,7 @@ export function AuthProvider({ children }) {
         throw new Error(data.message || "Registration failed");
       }
 
+      // Do NOT set token here so the user is forced to log in manually via the login page
       return { ok: true, message: data.message };
     } catch (error) {
       console.error("Registration error:", error);

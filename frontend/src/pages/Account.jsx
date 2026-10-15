@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+﻿import { useState, useEffect, useMemo, useCallback } from "react";
 import { NavLink, Route, Routes, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -198,7 +198,7 @@ function TrackingJourney({ status }) {
     return (
       <div className="flex items-center gap-2 p-3 bg-rose-50 border border-rose-100 rounded-xl text-xs font-medium text-rose-700">
         <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
-        Return Requested — Our customer support team will contact you within 24 hours.
+        Return Requested ΓÇö Our customer support team will contact you within 24 hours.
       </div>
     );
   }
@@ -241,7 +241,7 @@ function TrackingJourney({ status }) {
                     : "bg-white text-slate-400 border-2 border-slate-200"
                 }`}
               >
-                {isCompleted && !isCurrent ? "✓" : i + 1}
+                {isCompleted && !isCurrent ? "Γ£ô" : i + 1}
               </div>
               <span
                 className={`mt-2 text-[11px] font-semibold uppercase tracking-wider text-center ${
@@ -425,7 +425,7 @@ function Overview({ orders, loadingOrders }) {
                     <div className="text-left md:text-right">
                       <p className="text-xs text-slate-400">{totalItems} item{totalItems > 1 ? "s" : ""}</p>
                       <p className="font-display font-bold text-base text-[#111827]">
-                        ₹{order.totalPrice?.toLocaleString("en-IN") || "0"}
+                        Γé╣{order.totalPrice?.toLocaleString("en-IN") || "0"}
                       </p>
                     </div>
                     <button
@@ -484,7 +484,7 @@ function Overview({ orders, loadingOrders }) {
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Membership Tier</p>
             <div className="flex items-center gap-2 mt-0.5">
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-orange-100 text-[#F97316]">
-                ★ SoleMember
+                Γÿà SoleMember
               </span>
               <span className="text-xs text-slate-600 font-medium">{user?.loyaltyPoints || 120} Points</span>
             </div>
@@ -678,7 +678,7 @@ function Orders({ orders, loadingOrders, ordersError, onRetry }) {
               <div className="text-right">
                 <span className="text-xs text-slate-400">Total Price</span>
                 <p className="font-display font-bold text-xl text-[#111827]">
-                  ₹{o.totalPrice?.toLocaleString("en-IN")}
+                  Γé╣{o.totalPrice?.toLocaleString("en-IN")}
                 </p>
               </div>
             </div>
@@ -708,17 +708,17 @@ function Orders({ orders, loadingOrders, ordersError, onRetry }) {
                     <div>
                       <p className="font-semibold text-[#111827] text-sm">{it.name}</p>
                       <p className="text-xs text-slate-500 mt-0.5">
-                        {it.color ? `Color: ${it.color} · ` : ""}
-                        {it.size ? `Size: UK ${it.size} · ` : ""}
+                        {it.color ? `Color: ${it.color} ┬╖ ` : ""}
+                        {it.size ? `Size: UK ${it.size} ┬╖ ` : ""}
                         Qty: {it.qty || 1}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold text-sm text-[#111827]">
-                      ₹{((it.price || 0) * (it.qty || 1)).toLocaleString("en-IN")}
+                      Γé╣{((it.price || 0) * (it.qty || 1)).toLocaleString("en-IN")}
                     </p>
-                    <p className="text-[11px] text-slate-400">₹{it.price?.toLocaleString("en-IN")} each</p>
+                    <p className="text-[11px] text-slate-400">Γé╣{it.price?.toLocaleString("en-IN")} each</p>
                   </div>
                 </div>
               ))}
@@ -1104,7 +1104,7 @@ function Addresses() {
                 onClick={() => setShowModal(false)}
                 className="h-8 w-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center text-sm font-bold"
               >
-                ✕
+                Γ£ò
               </button>
             </div>
 
@@ -1499,12 +1499,12 @@ function Settings() {
 
         {profileSuccess && (
           <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium">
-            ✓ {profileSuccess}
+            Γ£ô {profileSuccess}
           </div>
         )}
         {profileError && (
           <div className="mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 font-medium">
-            ✕ {profileError}
+            Γ£ò {profileError}
           </div>
         )}
 
@@ -1574,12 +1574,12 @@ function Settings() {
 
         {passwordSuccess && (
           <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium">
-            ✓ {passwordSuccess}
+            Γ£ô {passwordSuccess}
           </div>
         )}
         {passwordError && (
           <div className="mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 font-medium">
-            ✕ {passwordError}
+            Γ£ò {passwordError}
           </div>
         )}
 
@@ -1593,7 +1593,7 @@ function Settings() {
                 type={showCurrentPass ? "text" : "password"}
                 value={currentPassword}
                 onChange={(e) => setCurrentPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="ΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇó"
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:border-[#111827] focus:ring-2 focus:ring-slate-100 outline-hidden transition pr-10"
               />
               <button
@@ -1667,12 +1667,12 @@ function Settings() {
 
         {notifSuccess && (
           <div className="mb-5 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium">
-            ✓ {notifSuccess}
+            Γ£ô {notifSuccess}
           </div>
         )}
         {notifError && (
           <div className="mb-5 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 font-medium">
-            ✕ {notifError}
+            Γ£ò {notifError}
           </div>
         )}
 
