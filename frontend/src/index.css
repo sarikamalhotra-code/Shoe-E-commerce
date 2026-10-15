@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { @apply bg-paper text-ink font-body antialiased; }
+::selection { background: #FF6B1A; color: #fff; }
+:focus-visible { outline: 3px solid #0B1B3D; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+.container-x { @apply mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-8; }
+
+.tread-divider {
+  height: 6px; width: 100%;
+  background-image: linear-gradient(135deg, #0B1B3D 25%, transparent 25%), linear-gradient(225deg, #0B1B3D 25%, transparent 25%), linear-gradient(45deg, #0B1B3D 25%, transparent 25%), linear-gradient(315deg, #0B1B3D 25%, transparent 25%);
+  background-position: 8px 0, 8px 0, 0 0, 0 0;
+  background-size: 16px 16px; background-repeat: repeat-x; opacity: 0.15;
+}
+
+.stamp { @apply font-semibold uppercase text-[10px] tracking-wide px-2 py-1 inline-block rounded; }
+.badge-new { @apply stamp bg-track text-white; }
+.badge-bestseller { @apply stamp bg-traction text-white; }
+.badge-sale { @apply stamp bg-sale text-white; }
+
+.btn-primary { @apply inline-flex items-center justify-center gap-2 bg-traction text-white font-semibold text-sm px-6 py-3 rounded-md hover:bg-[#e85d0f] transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm; }
+.btn-dark { @apply inline-flex items-center justify-center gap-2 bg-track text-white font-semibold text-sm px-6 py-3 rounded-md hover:bg-track-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
+.btn-outline { @apply inline-flex items-center justify-center gap-2 border-2 border-ink text-ink font-semibold text-sm px-6 py-3 rounded-md hover:bg-ink hover:text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
+.btn-outline-white { @apply inline-flex items-center justify-center gap-2 border-2 border-white text-white font-semibold text-sm px-6 py-3 rounded-md hover:bg-white hover:text-track transition-colors; }
+
+.input { @apply w-full border border-ink/15 bg-white px-3 py-2.5 text-sm rounded-md placeholder:text-graphite focus:border-track outline-none; }
+
+.label-eyebrow { @apply font-body font-semibold uppercase text-xs tracking-wider text-graphite; }
+
+.card { @apply bg-white rounded-xl shadow-card hover:shadow-cardHover transition-shadow duration-300; }
+
+.icon-btn { @apply h-10 w-10 flex items-center justify-center rounded-full hover:bg-haze transition-colors; }
+
+.arrow-btn { @apply h-9 w-9 flex items-center justify-center rounded-full border border-ink/15 bg-white hover:bg-track hover:text-white hover:border-track transition-colors shrink-0; }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Compatibility aliases used by the secondary demo pages */
+.btn-accent { @apply btn-primary; }
+.stamp-solid { @apply stamp bg-track text-white; }
+.stitch { @apply underline underline-offset-4 decoration-dashed; }
+
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
